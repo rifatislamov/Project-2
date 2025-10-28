@@ -930,4 +930,75 @@ body.active { overflow: hidden; }
     width: calc(50% - 30px);
   }
 
-} 
+}  
+/* === Общие стили для появления === */
+.section, img {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* === Анимация логотипа === */
+.logo img {
+  transition: transform 0.8s ease;
+}
+.logo-animate {
+  transform: scale(1.2);
+}
+.logo-animate {
+  animation: logoShrink 0.8s forwards;
+}
+@keyframes logoShrink {
+  0% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* === Кнопка "Get Started" === */
+.btn-secondary {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.btn-visible {
+  opacity: 1;
+}
+
+/* === Пульсация иконок сервисов === */
+.service-card img {
+  transition: transform 0.3s ease;
+}
+.pulse {
+  transform: scale(1.2);
+}
+
+/* === Подсветка карточек проектов === */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+.project-hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* === Меню === */
+[data-navbar] {
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+[data-navbar].open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Социальные иконки === */
+.social-link {
+  transition: transform 0.3s ease;
+}
+.social-hover {
+  transform: rotate(10deg) scale(1.2);
+}
